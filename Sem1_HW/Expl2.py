@@ -9,36 +9,24 @@
 24 -> 4  16  4
     60 -> 10  40  10
 '''
-# Peter - a, Kate - b, Sergey - c                      7/2
-# a = x, b = y = 2*x, c = x
+'''
+Math solivng
+# Peter - a, Kate - b, Sergey - c
+# a = x, b = y = 4*x, c = x
+# all_cranes = x+4x+x = 6x
+# x = all_cranes/6
+'''
 summary_number = int(input("Enter number of all cranes: "))
-minimum_of_cranes = 4
-i = summary_number
+minimum_of_cranes = 6
+
 if summary_number < minimum_of_cranes:
     print('Not anought cranes to children')
 elif summary_number % 2 != 0:
     print('Number is not division by 2 without remainder')
-elif summary_number % 2 == 0:
-    while i != (i % 2 == 0):
-
-    '''
-    if summary_number % 3 == 0:
-        cranes_of_x = int(summary_number/2+1)
-        cranes_of_y = int(summary_number/4)
-        print('Peter creates cranes: ', cranes_of_y)
-        print('Kate creates cranes: ', cranes_of_x)
-        print('Sergey creates cranes: ', cranes_of_y)
-    else:
-        cranes_of_x = int(summary_number/2)
-        cranes_of_y = int(summary_number/4)
-        print('Peter creates cranes: ', cranes_of_y)
-        print('Kate creates cranes: ', cranes_of_x)
-        print('Sergey creates cranes: ', cranes_of_y)   
-'''
-    '''
-    cranes_of_y = int(summary_number/2)
-    cranes_of_x = int(cranes_of_y/2)
-    print('Peter creates cranes: ', cranes_of_x)
-    print('Kate creates cranes: ', cranes_of_y)
-    print('Sergey creates cranes: ', cranes_of_x)
-    '''
+elif summary_number % 2 == 0 and summary_number % 6 != 0:
+    print('Number is not division by 6 without remainder')
+elif summary_number % 2 == 0 and summary_number % 6 == 0:
+    one_crane = int(summary_number/6)
+    print('Peter creates cranes: ', one_crane)
+    print('Kate creates cranes: ', one_crane*4)
+    print('Sergey creates cranes: ', one_crane)
