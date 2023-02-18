@@ -1,4 +1,4 @@
-# 4. Пользователь вводит целое число. Выведите YES, если это число является четырехзначным, и NO в противном случае.
+# 4. The user enters an integer. Print YES if this number has four digits and NO otherwise.
 
 
 # without circles

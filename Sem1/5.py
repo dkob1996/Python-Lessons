@@ -1,5 +1,5 @@
-# 5. За день машина проезжает n километров. Сколько дней нужно, чтобы проехать маршрут длиной m километров?
-# При решении этой задачи нельзя пользоваться условной инструкцией if и циклами.
+# 5. A car travels n kilometers in a day. How many days does it take to travel a route m kilometers long?
+# When solving this problem, you can not use the conditional if statement and loops.
 
 
 n = int(input("Enter n kilomiters/day: "))

@@ -1,7 +1,7 @@
-# 6. В некоторой школе решили набрать три новых математических класса и оборудовать кабинеты для них новыми партами.
-# За каждой партой может сидеть два учащихся.
-# Известно количество учащихся в каждом из трех классов.
-# Выведите наименьшее число парт, которое нужно приобрести для них.
+# 6. At some school, they decided to recruit three new math classes and equip classrooms for them with new desks.
+# Two students can sit at each desk. 
+# The number of students in each of the three classes is known.
+# Output the least number of desks to be purchased for them.
 
 number_of_children_in_first_class = int(
     input("Enter count of childrens in first classroom"))

@@ -1,4 +1,4 @@
-# 3. Пользователь вводит два целых числа. Выведите меньшее из них.
+# 3. The user enters two integers. Print the smallest of them.
 
 first_number = int(input("Enter first number: "))
 second_number = int(input("Enter second number: "))

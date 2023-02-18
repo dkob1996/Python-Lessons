@@ -1,4 +1,4 @@
-# 2. Даны два целых числа: A, B. Проверить истинность высказывания: "Числа A и B имеют одинаковую четность"
+# 2. Two integers are given: A, B. Check the truth of the statement: "The numbers A and B have the same parity"
 
 first_number = int(input("Enter A number: "))
 second_number = int(input("Enter B number: "))
