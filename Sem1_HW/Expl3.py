@@ -1,9 +1,9 @@
 '''
-Задача 3: Вы пользуетесь общественным транспортом? Вероятно, вы расплачивались за проезд и получали билет с номером. 
-Счастливым билетом называют такой билет с шестизначным номером, где сумма первых трех цифр равна сумме последних трех. 
-Т.е. билет с номером 385916 – счастливый, т.к. 3+8+5=9+1+6. Вам требуется написать программу, которая проверяет счастливость билета.
+Task 3: Do you use public transport? You probably paid for the fare and received a ticket with a number. 
+A lucky ticket is a ticket with a six-digit number, where the sum of the first three digits is equal to the sum of the last three. 
+That is, the ticket with the number 385916 is a lucky one, because 3+8+5=9+1+6. You need to write a program that checks the ticket's happiness.
 
-*Пример:*
+*Example:*
 
 385916 -> yes
 123456 -> no

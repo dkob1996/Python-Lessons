@@ -1,7 +1,7 @@
 '''
-Задача 1: Найдите сумму цифр трехзначного числа.
+Task 1: Find the sum of the digits of a three-digit number.
 
-*Пример:*
+*Example:*
 
 123 -> 6 (1 + 2 + 3)
 100 -> 1 (1 + 0 + 0) 

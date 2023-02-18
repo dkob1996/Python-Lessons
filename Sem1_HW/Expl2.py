@@ -1,9 +1,9 @@
 '''
-Задача 2: Петя, Катя и Сережа делают из бумаги журавликов. Вместе они сделали S журавликов. 
-Сколько журавликов сделал каждый ребенок, если известно, что Петя и Сережа сделали одинаковое количество журавликов, 
-а Катя сделала в два раза больше журавликов, чем Петя и Сережа вместе?
+Task 2: Peter, Kate and Sergey make cranes out of paper. Together they made S cranes. 
+How many cranes did each child make, if it is known that Peter and Sergey made the same number of cranes,
+and Kate made twice as many cranes as Peter and Sergey together?
 
-*Пример:*
+*Example:*
 
 6 -> 1  4  1
 24 -> 4  16  4

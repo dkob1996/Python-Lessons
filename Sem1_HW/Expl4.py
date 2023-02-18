@@ -1,8 +1,8 @@
 '''
-Задача 4: Требуется определить, можно ли от шоколадки размером n × m долек отломить k долек, 
-если разрешается сделать один разлом по прямой между дольками (то есть разломить шоколадку на два прямоугольника).
+Task 4: It is required to determine whether it is possible to break off k lobules from a chocolate bar with a size of n × m lobules, 
+if it is allowed to make one break in a straight line between the slices (that is, break the chocolate into two rectangles).
 
-*Пример:*
+*Example:*
 
 3 2 4 -> yes
 3 2 1 -> no
