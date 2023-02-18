@@ -21,11 +21,9 @@ minimum_of_cranes = 6
 
 if summary_number < minimum_of_cranes:
     print('Not anought cranes to children')
-elif summary_number % 2 != 0:
-    print('Number is not division by 2 without remainder')
-elif summary_number % 2 == 0 and summary_number % 6 != 0:
+elif summary_number % 6 != 0:
     print('Number is not division by 6 without remainder')
-elif summary_number % 2 == 0 and summary_number % 6 == 0:
+else:
     one_crane = int(summary_number/6)
     print('Peter creates cranes: ', one_crane)
     print('Kate creates cranes: ', one_crane*4)
