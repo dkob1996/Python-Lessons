@@ -17,7 +17,7 @@ n = int(input("Enter N: "))
 count=0
 
 for i in range(n):
-    t = randint(-50, 50)
+    t = randint(-1, 1)
     print(t, end=' , ')
     if t>0:
         count +=1
