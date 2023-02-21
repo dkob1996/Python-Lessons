@@ -13,10 +13,12 @@ ticket_number_int = int(input("Enter your ticket number: "))
 ticket_number = str(ticket_number_int)
 count_of_numbers_in_ticket = len(ticket_number)
 
-sum_of_first_numbers = int(ticket_number[0]) + int(ticket_number[1]) + int(ticket_number[2])
-sum_of_second_numbers = int(ticket_number[3]) + int(ticket_number[4]) + int(ticket_number[5])
+sum_of_first_numbers = int(
+    ticket_number[0]) + int(ticket_number[1]) + int(ticket_number[2])
+sum_of_second_numbers = int(
+    ticket_number[3]) + int(ticket_number[4]) + int(ticket_number[5])
 
-if count_of_numbers_in_ticket<6:
+if count_of_numbers_in_ticket != 6:
     print('Invalid count of numbers in ticket - need 6 numbers')
 elif sum_of_first_numbers == sum_of_second_numbers:
     print('yes')

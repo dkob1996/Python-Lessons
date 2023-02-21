@@ -16,6 +16,14 @@ Math solivng
 # all_cranes = x+4x+x = 6x
 # x = all_cranes/6
 '''
+# Easy code for it
+'''
+n = int(input())
+n1 = n // 6
+n2 = n // 6
+n3 = (n // 6) * 4
+print(n1, n3, n2)
+'''
 summary_number = int(input("Enter number of all cranes: "))
 minimum_of_cranes = 6
 

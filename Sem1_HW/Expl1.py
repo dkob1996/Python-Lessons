@@ -8,7 +8,7 @@ Task 1: Find the sum of the digits of a three-digit number.
 '''
 
 # Solving with string and while
-'''
+
 current_string = str(input("Enter your number: "))
 
 lenght_of_string = len(current_string)
@@ -23,7 +23,7 @@ while i < lenght_of_string:
     i +=1
 
 print(sum)
-'''
+
 
 # Solving with integer and without cycles
 
