@@ -65,7 +65,7 @@ elif D == 0:
     y = p/x
     if s % 2 > 0 or p % x > 0:
         print('Numbers are need to be integer')
-    if x < 1 or y < 1:
+    if x < 0 or y < 0:
         print('Numbers are need to be >0')
     else:
         print('We have one pair of numbers: ')
