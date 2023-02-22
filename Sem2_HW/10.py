@@ -1,5 +1,5 @@
 '''
-Task 10: <br>
+Task 10:
 There are n coins on the table. Some of them are tails up, and some are coats of arms. 
 Determine the minimum number of coins that need to be turned over so that all the coins are turned up with the same side. 
 Print the minimum number of coins to flip
