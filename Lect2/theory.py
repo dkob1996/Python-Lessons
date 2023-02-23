@@ -86,3 +86,119 @@ print (a1,b1,c1)  # a1 b1 c1
 t = (1,2,3,5,)
 for i in t:       # print all tuple
     print(i)
+
+for i in range(len(t)):   # the same
+    print(t[i])
+
+     # the most important rule - we cannot change tuple, just list #
+
+
+# dictionary
+
+dictionary = {}
+
+dictionary = {'up': '↑', 'left': '←', 'down': '↓', 'right': '→'}
+
+print(dictionary)   # {'up': '↑', 'left': '←', 'down': '↓', 'right': '→'}
+
+print(dictionary['left'])  # ←
+
+dictionary['left'] = '↔'
+print(dictionary['left'])  # ↔
+
+print(dictionary['type'])  # error
+
+del dictionary['left']     # delete element
+
+# how create dictionary
+d = {}       # create empty dictionary
+d = dict()   # our dictionary = dict
+
+d['q'] = 'qwerty'  # add new element in dictionary
+d['w'] = 'werty'
+
+print(d['q'])     # print qwerty
+
+# add new item in dictionary
+dictionary[895] = 98998
+print(dictionary)    # {'up': '↑', 'left': '←', 'down': '↓', 'right': '→', 895: 98998}
+
+# print all elements in dictionary
+for item in dictionary:
+    print(item)
+
+# print all elements in special format
+for item in dictionary:
+    print('{}: {}'.format(item, dictionary[item]))  
+
+# same like print all elements in special format
+for (k,v) in dictionary.items():      # k - key, v - element
+    print(k,v)
+
+# view tuple in dictionary
+print(dictionary.items())     # dict_items([('up', '↑'), ('left', '←'), ('down', '↓'), ('right', '→')])
+
+
+
+# sets
+colours = {'red','green','blue'}
+print(colours)                 # {'green', 'red', 'blue'}
+
+# if we add the same element in dictionary - not duplicate
+colours.add('red')
+print(colours)                 # {'green', 'red', 'blue'}
+
+# add element in the end of dictionary
+colours.add('gray')            # {'green', 'red', 'blue', 'gray'}
+print(colours)
+
+# delete element from dictionary
+colours.remove('red')          # {'green', 'blue', 'gray'}
+print(colours)
+
+# if we try to delete non-exist element = error
+colours.remove('red')          # error
+print(colours)
+
+# if we want to avoid error, we need to use 'discard'
+colours.discard('red')
+print(colours)
+
+# delete all elements in dictionary
+colours.clear()  # {}
+print(colours)   # set()
+
+# if we want to create set we use:
+q = set()
+
+
+# operations with sets
+a = {1,2,3,5,8}
+b = {2,5,8,13,21}
+
+# copy elements in a
+c = a.copy()                                 # c = {1,2,3,5,8}
+
+# join a and b
+u = a.union(b)                               # u = {1,2,3,5,8,15,21}
+
+# elements which matches in a and b
+i = a.intersection(b)                        # i = {8,2,5}
+
+# a - b
+dl = a.difference(b)                         # dl = {1,3}
+
+# b - a
+dr = b.difference(a)                         # dr = {13,21}
+
+# combination of methods
+#      2          3             1
+q=a.union(b).difference(a.intersection(b))   # {1,21,3,13}
+
+
+# frozen sets:
+a = {1,8,6}         # usually set
+
+b = frozenset(a)    # usually set who we cannot change
+
+
