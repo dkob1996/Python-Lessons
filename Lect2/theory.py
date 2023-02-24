@@ -152,6 +152,9 @@ print(colours)                 # {'green', 'red', 'blue'}
 colours.add('gray')            # {'green', 'red', 'blue', 'gray'}
 print(colours)
 
+# get  - print without error if element banana doesn't exist
+print(colours.get['banana', 'non-exist'])
+
 # delete element from dictionary
 colours.remove('red')          # {'green', 'blue', 'gray'}
 print(colours)
