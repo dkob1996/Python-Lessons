@@ -32,7 +32,8 @@ A, E, I, O, U, L, N, S, T, R – 1 point; D, G – 2 points; B, C, M, P – 3 po
 And Russian letters are evaluated as follows: 
 А, В, Е, И, Н, О, Р, С, Т – 1 point; Д, К, Л, М, П, У – 2 points; Б, Г, Ё, Ь, Я – 3 points; Й, Ы – 4 points; Ж, З, Х, Ц, Ч – 5 points; Ш, Э, Ю – 8 points; Ф, Щ, Ъ – 10 points.
 
-Write a program that calculates the cost of the word entered by the user. We will assume that only one word is submitted to the input, which contains either only English or only Russian letters.
+Write a program that calculates the cost of the word entered by the user. 
+We will assume that only one word is submitted to the input, which contains either only English or only Russian letters.
 
 *Example:*
 

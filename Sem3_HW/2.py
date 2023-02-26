@@ -1,9 +1,10 @@
 '''
-Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. 
-Пользователь в первой строке вводит натуральное число N – количество элементов в массиве. 
-В последующих  строках записаны N целых чисел Ai. Последняя строка содержит число X
+Task 18:
+It is required to find in the array A[1..N] the element closest in magnitude to a given number X. 
+In the first line, the user enters a natural number N – the number of elements in the array. 
+The following lines contain N integers Ai. The last line contains the number X
 
-*Пример:*
+*Example:*
 
 5
     1 2 3 4 5
