@@ -1,8 +1,16 @@
 '''
-Задача 28: Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел. Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
+Task 28: 
+Write a recursive function sum(a, b) that returns the sum of two non-negative integers. Of all arithmetic operations, only +1 and -1 are allowed. You can't use loops either.
 
-*Пример:*
+*Example:*
 
 2 2
-    4 
+    4
 '''
+def sum(a,b):
+    return (sum(a+1,b-1) if b else a)
+
+a = int(input('Enter A: '))
+b = int(input('Enter B: '))
+
+print(sum(a,b))

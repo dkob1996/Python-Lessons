@@ -1,7 +1,8 @@
 '''
-Задача 26:  Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
+Task 26: 
+Write a program that takes two numbers A and B as input, and raises the number A to the integer power of B using recursion.
 
-*Пример:*
+*Example:*
 
 A = 3; B = 5 -> 243 (3⁵)
     A = 2; B = 3 -> 8 

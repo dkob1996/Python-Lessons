@@ -1,14 +1,15 @@
 '''
-## Задача 1
-Строка представляет собой арифметическое выражение из однозначных чисел и знаков + и -. Вычислите результат.
-Пример
-Ввод
+Task 1
+A string is an arithmetic expression consisting of single digits and the signs + and -. Calculate the result.
+Example
+Input
 
 8-5+2-1
-Вывод
+Conclusion
 4
 
 -5+3+8-7
+Output
 -1
 '''
 

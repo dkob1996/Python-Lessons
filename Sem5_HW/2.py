@@ -1,26 +1,26 @@
 '''
-Задача 2
-Словом в данной задаче считается последовательность букв, ограниченная пробелами или началом или концом строки.
-Выведите все слова из строки в столбик. НЕЛЬЗЯ ПОЛЬЗОВАТЬСЯ МЕТОДАМИ СТРОК (split)
+Task 2
+A word in this problem is a sequence of letters limited by spaces or the beginning or end of a line.
+Print all the words from a row to a column. YOU CANNOT USE STRING METHODS (split)
 
-Формат ввода
-Вводится строка.
+Input format
+A string is entered.
 
-Формат вывода
-Выведите слова из строки по одному.
+Output format
+Print the words from the string one by one.
 
-Пример 1
-Ввод
+Example 1
+Input
 
 Hello, world!
-Вывод
+Conclusion
 Hello,
 world!
-Пример 2
-Ввод
+Example 2
+Input
 
 My heart in the Highland
-Вывод
+Conclusion
 My
 heart
 in
