@@ -21,3 +21,11 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/2_1.JPG">
 </details>
 <br>
+
+### 3 Day - Intro to Conditional Statements.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/3_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/3_1.JPG">
+</details>
+<br>
