@@ -29,3 +29,12 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/3_1.JPG">
 </details>
 <br>
+
+### 4 Day - Class vs. Instance.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/4_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/4_1.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/4_2.JPG">
+</details>
+<br>
