@@ -96,24 +96,14 @@ print(count)
 
 list_of_strigs = [input('enter string: ') for _ in range(int(input('enter count of string: ')))]
 list_of_names = [input('enter names: ') for _ in range(int(input('enter count of names: ')))]
-'''
-for i in range(0, len(list_of_names)-1):
+
+for i in range(0, len(list_of_names)):
     flag = False
-    for j in range(0, len(list_of_strigs)-1):
+    for j in range(0, len(list_of_strigs)):
         if list_of_names[i] in list_of_strigs[j]:
             print(j+1)
             flag = True
             break
 
-if not flag:
-    print(-1)
-'''
-
-# without flag                                     # need test
-for i in range(0, len(list_of_names)-1):
-    for j in range(0, len(list_of_strigs)-1):
-        if list_of_names[i] in list_of_strigs[j]:
-            print(j+1)
-            break
-    else:
+    if not flag:
         print(-1)
