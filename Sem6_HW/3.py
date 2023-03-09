@@ -40,25 +40,31 @@ AAAAAA
 control = input('Enter control symbol: ')
 list_of_str = [input('Enter string: ') for _ in range(int(input('Enter count of strings: ')))]
 
+#control = 'E'
+#list_of_str = ['EVERYS', 'MAN', 'TO', 'HIS', 'TASTE']
+str_set = set(list_of_str)
+
 d = {}
 
-for i in list_of_str:
+for i in str_set:
     tmp =0
     str_tmp = str()
+    used_set = set(control)
     for j in range(len(i)):
-        if i[j] not in control:
+        if i[j] not in used_set:
+            used_set.add(i[j])
             tmp +=1
             str_tmp +=i[j]
     d[str_tmp] = tmp
 
-print(d)
+max_el = 0
+max_str = str()
+for item in d:
+    if d[item]>max_el:
+        max_el = d[item]
+        max_str = item
 
-#empt_str = str()
-
-for (i,j) in d.items():
-    max_el = j
-    if j+1>max_el:
-        max_el =j+1
-        print(max_el)
-        #empt_str = i
-#print(d[empt_str])
+if max_el >0:
+    print(max_str)
+else:
+    print(-1)
