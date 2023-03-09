@@ -38,3 +38,20 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/4_2.JPG">
 </details>
 <br>
+
+### 5 Day - Loops.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/5_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/5_1.JPG">
+</details>
+<br>
+
+### 6 Day - Let's Review.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/6_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/6_1.JPG">
+</details>
+<br>
+
