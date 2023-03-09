@@ -1,9 +1,9 @@
 '''
-Задача 30:  
-Заполните массив элементами арифметической прогрессии. 
-Её первый элемент, разность и количество элементов нужно ввести с клавиатуры. 
-Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
-Каждое число вводится с новой строки.
+Task 30:  
+Fill the array with arithmetic progression elements. 
+Its first element, the difference and the number of elements must be entered from the keyboard. 
+The formula for obtaining the nth term of the progression is: an = a1 + (n-1) * d.
+Each number is entered from a new line.
 '''
 first_element = int(input('Enter first element: '))
 difference = int(input('Enter difference: '))

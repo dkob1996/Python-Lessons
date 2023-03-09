@@ -1,17 +1,15 @@
 '''
-Задача 33: 
-Для введенных строк определите, в какой из них встречается больше всего различных символов, отличающихся от контрольного. 
-Выведите эти символы из строки без повторений, каждый с новой строки. Если таких строк несколько, выведите символы из любой.
+Task 33: 
+For the entered strings, determine which of them contains the most different characters that differ from the control one. Print these characters from the string without repetition, each from a new line. If there are several such lines, output characters from any one.
 
-Формат ввода
-Вводится контрольный символ, затем количество строк, затем сами строки.
+Input format
+A control character is entered, then the number of lines, then the lines themselves.
 
-Формат вывода
-Выведите подряд без повторений символы из строки, в которой их оказалось больше всего, не считая контрольный. 
-Если ни одной не оказалось, выведите -1. Порядок вывода произвольный.
+Output format
+Print in a row, without repetition, the characters from the string in which there were most of them, not counting the control one. If there were none, print -1. The order of output is arbitrary.
 
-Пример 1
-Ввод
+Example 1
+Input
 
 E
 5
@@ -21,11 +19,11 @@ TO
 HIS
 TASTE
 
-Вывод
-RVY
 
-Пример 2
-Ввод
+RVY output
+
+Example 2
+Input
 
 A
 4
@@ -34,7 +32,7 @@ AAA
 AAAA
 AAAAAA
 
-Вывод
+Output
 -1
 '''
 control = input('Enter control symbol: ')

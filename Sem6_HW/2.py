@@ -1,6 +1,6 @@
 '''
-### Задача 32: 
-Определить индексы элементов массива (списка), значения которых принадлежат заданному диапазону (т.е. не меньше заданного минимума и не больше заданного максимума)
+Task 32: 
+Determine the indexes of array (list) elements whose values belong to a given range (i.e. not less than a given minimum and not more than a given maximum)
 '''
 
 import random

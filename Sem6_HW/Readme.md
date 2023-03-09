@@ -1,3 +1,49 @@
+### Task 30:  
+Fill the array with arithmetic progression elements. 
+Its first element, the difference and the number of elements must be entered from the keyboard. 
+The formula for obtaining the nth term of the progression is: an = a1 + (n-1) * d.
+Each number is entered from a new line.
+
+### Task 32: 
+Determine the indexes of array (list) elements whose values belong to a given range (i.e. not less than a given minimum and not more than a given maximum)
+
+### Task 33: 
+For the entered strings, determine which of them contains the most different characters that differ from the control one. Print these characters from the string without repetition, each from a new line. If there are several such lines, output characters from any one.
+
+Input format
+A control character is entered, then the number of lines, then the lines themselves.
+
+Output format
+Print in a row, without repetition, the characters from the string in which there were most of them, not counting the control one. If there were none, print -1. The order of output is arbitrary.
+
+Example 1
+Input
+
+E
+5
+EVERY
+MAN
+TO
+HIS
+TASTE
+
+
+RVY output
+
+Example 2
+Input
+
+A
+4
+AA
+AAA
+AAAA
+AAAAAA
+
+Output
+-1
+
+
 ## Translation:<br>
 ### Задача 30:  
 Заполните массив элементами арифметической прогрессии. 
