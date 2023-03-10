@@ -55,3 +55,10 @@
 </details>
 <br>
 
+### 7 Day - Arrays.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/7_0.JPG">
+</details>
+<br>
+
