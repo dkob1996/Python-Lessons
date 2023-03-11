@@ -62,3 +62,10 @@
 </details>
 <br>
 
+### 8 Day - Dictionaries and Maps.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/8_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/8_1.JPG">
+</details>
+<br>
