@@ -77,3 +77,11 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/9_1.JPG">
 </details>
 <br>
+
+### 10 Day - Binary Numbers.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/10_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/10_1.JPG">
+</details>
+<br>
