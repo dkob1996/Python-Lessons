@@ -71,11 +71,11 @@ print(a/b)
 '''
 def fact(n):
     if n ==0:
-        fact=0
-    if n ==1:
-        fact=1     # do later
+        return 1
+    else:
+        return n*fact(n-1)
     
-
+print(fact(5))
 
 fact = 1
 for i in range(2,31):
