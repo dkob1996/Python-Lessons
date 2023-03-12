@@ -69,3 +69,11 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/8_1.JPG">
 </details>
 <br>
+
+### 9 Day - Recursion 3.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/9_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/9_1.JPG">
+</details>
+<br>
