@@ -85,3 +85,12 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/10_1.JPG">
 </details>
 <br>
+
+### 11 Day - 2D Arrays.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/11_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/11_1.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/11_2.JPG">
+</details>
+<br>
