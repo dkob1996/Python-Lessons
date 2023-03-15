@@ -23,5 +23,33 @@ class Student(Person):
     #   Return: A character denoting the grade.
     #
     # Write your function here
+    def __init__(self, firstName, lastName, idNum, scores):
+        Person.__init__(self, firstName, lastName, idNum)
+        self.scores = scores
+	
 
+
+    def calculate(self):
+        y = sum(scores) / len(scores)
+
+        if 90<= y <= 100:
+            return 'O'
+        elif 80<= y < 90:
+            return 'E'
+        elif 70<= y < 80:
+            return 'A'
+        elif 55<= y < 70:
+            return 'P'
+        elif 40<= y < 55:
+            return 'D'
+        elif y < 40:
+            return 'T'
+        
 line = input().split()
+firstName = line[0]
+lastName = line[1]
+idNum = line[2]
+scores = list(map(int, input().split()))
+s = Student(firstName, lastName, idNum, scores)
+s.printPerson()
+print("Grade:", s.calculate())

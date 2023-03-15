@@ -94,3 +94,11 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/11_2.JPG">
 </details>
 <br>
+
+### 12 Day - Inheritance.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/12_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/12_1.JPG">
+</details>
+<br>
