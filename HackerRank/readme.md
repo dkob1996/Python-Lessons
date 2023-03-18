@@ -110,3 +110,11 @@
 <image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/13_1.JPG">
 </details>
 <br>
+
+### 14 Day -  Scope.
+<details>
+<summary>Click to task</summary>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/14_0.JPG"><br>
+<image src="https://github.com/dkob1996/Python-Lessons/blob/main/HackerRank/img/14_1.JPG">
+</details>
+<br>
