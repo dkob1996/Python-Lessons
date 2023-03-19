@@ -40,7 +40,7 @@ def answer(message):
    elif message.text.lower() == 'плохо':
        bot.send_message(message.chat.id, 'Что случилось?')
    elif message.text.lower() == 'знак зодиака':
-       markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+       markup = telebot.types.ReplyKeyboardMarkup(row_width = 4)
        item1 = telebot.types.KeyboardButton('Овен')
        item2 = telebot.types.KeyboardButton('Телец')
        item3 = telebot.types.KeyboardButton('Близнецы')
@@ -168,8 +168,17 @@ def horoscope(message):
        bot.send_message(message.chat.id, some_dict[message.text], reply_markup=markup)
        bot.register_next_step_handler(message, horoscope)
    elif message.text == 'Назад':
-       bot.register_next_step_handler(message, welcome)
-       bot.send_message(message.chat.id, 'Может еще хотите узнать про гороскоп? Если нет, нажимите кнопку "Назад" еще раз')
+       markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+       item1 = telebot.types.KeyboardButton('Рандомное число')
+       item2 = telebot.types.KeyboardButton('Кинуть кость')
+       item3 = telebot.types.KeyboardButton('Как дела?')
+       item4 = telebot.types.KeyboardButton('Напоминалка')
+       item5 = telebot.types.KeyboardButton('Загадай число')
+       item6 = telebot.types.KeyboardButton('Знак зодиака')
+       item7 = telebot.types.KeyboardButton('Математические задачки')
+       item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+       markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+       bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def mathsolving(message):
@@ -187,8 +196,17 @@ def mathsolving(message):
       bot.send_message(message.chat.id, 'Число должно быть >0')
       bot.register_next_step_handler(message, fibb)
    elif message.text == 'Назад':
-      bot.register_next_step_handler(message, welcome)
-      bot.send_message(message.chat.id, 'Хотите еще вычеслить что-то? Если нет, нажимите кнопку "Назад" еще раз')
+       markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+       item1 = telebot.types.KeyboardButton('Рандомное число')
+       item2 = telebot.types.KeyboardButton('Кинуть кость')
+       item3 = telebot.types.KeyboardButton('Как дела?')
+       item4 = telebot.types.KeyboardButton('Напоминалка')
+       item5 = telebot.types.KeyboardButton('Загадай число')
+       item6 = telebot.types.KeyboardButton('Знак зодиака')
+       item7 = telebot.types.KeyboardButton('Математические задачки')
+       item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+       markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+       bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
    elif message.text != 'Вычеслить факториал' or 'Вычеслить число Фиббоначчи' or 'Назад':
       bot.send_message(message.chat.id, 'Сначала выберете на клавиатуре то, что хотите')
       bot.register_next_step_handler(message, mathsolving)
