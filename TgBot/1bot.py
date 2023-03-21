@@ -10,6 +10,7 @@ import threading
 import requests
 from bs4 import BeautifulSoup
 from les4 import pars
+from forex1 import currency
 
 token = ''
 
@@ -30,8 +31,9 @@ def welcome(message):
     item6 = telebot.types.KeyboardButton('Знак зодиака')
     item7 = telebot.types.KeyboardButton('Математические задачки')
     item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+    item9 = telebot.types.KeyboardButton('Курсы валют')
 
-    markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
 
     bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
@@ -61,7 +63,6 @@ def answer(message):
         bot.send_message(message.chat.id, 'Жмакни на кнопку', reply_markup=markup)
         bot.register_next_step_handler(message, horoscope)
 
-
     elif message.text.lower() == 'загадай число':
         global number
         number = random.randint(1, 10)
@@ -78,6 +79,9 @@ def answer(message):
         bot.send_message(message.chat.id, str(random.randint(1, 100)))
     elif message.text.lower() == 'кинуть кость':
         bot.send_message(message.chat.id, str(random.randint(1, 7)))
+    elif message.text.lower() == 'курсы валют':
+        bot.send_message(message.chat.id, 'Введите название валюты')
+        bot.register_next_step_handler(message, forex)
     elif message.text.lower() == 'напоминалка':
         bot.send_message(message.chat.id, 'Введите название напоминания:')
         bot.register_next_step_handler(message, set_reminder_name)
@@ -94,6 +98,7 @@ def answer(message):
         bot.register_next_step_handler(message, solve_meal_input)
     else:
         bot.send_message(message.chat.id, 'Ориентируйтесь по предложенной клавиатуре и указаниям в чате')
+
 
 
 @bot.message_handler(content_types=['text'])
@@ -116,6 +121,9 @@ def solve_meal_input(message):
         bot.send_message(message.chat.id, 'Продолжите вводить здесь')
         bot.register_next_step_handler(message, solve_meal_input)
 
+@bot.message_handler(content_types=['text'])
+def forex(message):
+    bot.send_message(message.chat.id, currency(message.text))
 
 @bot.message_handler(content_types=['text'])
 def set_reminder_name(message):
@@ -186,7 +194,8 @@ def horoscope(message):
         item6 = telebot.types.KeyboardButton('Знак зодиака')
         item7 = telebot.types.KeyboardButton('Математические задачки')
         item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
-        markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
         bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
 
@@ -215,7 +224,8 @@ def mathsolving(message):
         item6 = telebot.types.KeyboardButton('Знак зодиака')
         item7 = telebot.types.KeyboardButton('Математические задачки')
         item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
-        markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
         bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
     elif message.text != 'Вычеслить факториал' or 'Вычеслить число Фиббоначчи' or 'Назад':
         bot.send_message(message.chat.id, 'Сначала выберете на клавиатуре то, что хотите')
