@@ -11,6 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 from les4 import pars
 from forex1 import currency
+from weather import weather_bishkek
 
 token = ''
 
@@ -32,8 +33,9 @@ def welcome(message):
     item7 = telebot.types.KeyboardButton('Математические задачки')
     item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
     item9 = telebot.types.KeyboardButton('Курсы валют')
+    item10 = telebot.types.KeyboardButton('Погода в Бишкеке')
 
-    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
 
     bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
@@ -44,6 +46,21 @@ def answer(message):
         bot.send_message(message.chat.id, 'Я рад за тебя')
     elif message.text.lower() == 'плохо':
         bot.send_message(message.chat.id, 'Что случилось?')
+    elif message.text.lower() == 'погода в бишкеке':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('00:00')
+        item2 = telebot.types.KeyboardButton('03:00')
+        item3 = telebot.types.KeyboardButton('06:00')
+        item4 = telebot.types.KeyboardButton('09:00')
+        item5 = telebot.types.KeyboardButton('12:00')
+        item6 = telebot.types.KeyboardButton('15:00')
+        item7 = telebot.types.KeyboardButton('18:00')
+        item8 = telebot.types.KeyboardButton('21:00')
+        item9 = telebot.types.KeyboardButton('24:00')
+        item10 = telebot.types.KeyboardButton('Назад')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Жмакни на кнопку', reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_bishkek)
     elif message.text.lower() == 'знак зодиака':
         markup = telebot.types.ReplyKeyboardMarkup(row_width=4)
         item1 = telebot.types.KeyboardButton('Овен')
@@ -163,6 +180,38 @@ def think_of(message):
     else:
         bot.send_message(message.chat.id, 'yep!')
 
+
+@bot.message_handler(content_types=['text'])
+def weather_in_bishkek(message):
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = telebot.types.KeyboardButton('00:00')
+    item2 = telebot.types.KeyboardButton('03:00')
+    item3 = telebot.types.KeyboardButton('06:00')
+    item4 = telebot.types.KeyboardButton('09:00')
+    item5 = telebot.types.KeyboardButton('12:00')
+    item6 = telebot.types.KeyboardButton('15:00')
+    item7 = telebot.types.KeyboardButton('18:00')
+    item8 = telebot.types.KeyboardButton('21:00')
+    item9 = telebot.types.KeyboardButton('24:00')
+    item10 = telebot.types.KeyboardButton('Назад')
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+    if message.text != 'Назад':
+        bot.send_message(message.chat.id, weather_bishkek(message.text), reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_bishkek)
+    elif message.text == 'Назад':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Рандомное число')
+        item2 = telebot.types.KeyboardButton('Кинуть кость')
+        item3 = telebot.types.KeyboardButton('Как дела?')
+        item4 = telebot.types.KeyboardButton('Напоминалка')
+        item5 = telebot.types.KeyboardButton('Загадай число')
+        item6 = telebot.types.KeyboardButton('Знак зодиака')
+        item7 = telebot.types.KeyboardButton('Математические задачки')
+        item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        item10 = telebot.types.KeyboardButton('Погода в Бишкеке')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def horoscope(message):
