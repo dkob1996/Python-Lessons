@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 from les4 import pars
 from forex1 import currency
-from weather import weather_bishkek
+from weather import weather_bishkek, weather_edmonton_canada, weather_sosnovy_bor
 
 token = ''
 
@@ -33,7 +33,7 @@ def welcome(message):
     item7 = telebot.types.KeyboardButton('Математические задачки')
     item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
     item9 = telebot.types.KeyboardButton('Курсы валют')
-    item10 = telebot.types.KeyboardButton('Погода в Бишкеке')
+    item10 = telebot.types.KeyboardButton('Погода')
 
     markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
 
@@ -46,21 +46,15 @@ def answer(message):
         bot.send_message(message.chat.id, 'Я рад за тебя')
     elif message.text.lower() == 'плохо':
         bot.send_message(message.chat.id, 'Что случилось?')
-    elif message.text.lower() == 'погода в бишкеке':
+    elif message.text.lower() == 'погода':
         markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-        item1 = telebot.types.KeyboardButton('00:00')
-        item2 = telebot.types.KeyboardButton('03:00')
-        item3 = telebot.types.KeyboardButton('06:00')
-        item4 = telebot.types.KeyboardButton('09:00')
-        item5 = telebot.types.KeyboardButton('12:00')
-        item6 = telebot.types.KeyboardButton('15:00')
-        item7 = telebot.types.KeyboardButton('18:00')
-        item8 = telebot.types.KeyboardButton('21:00')
-        item9 = telebot.types.KeyboardButton('24:00')
-        item10 = telebot.types.KeyboardButton('Назад')
-        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        item1 = telebot.types.KeyboardButton('Бишкек')
+        item2 = telebot.types.KeyboardButton('Сосновый Бор')
+        item3 = telebot.types.KeyboardButton('Эдмонтон')
+        item4 = telebot.types.KeyboardButton('Назад')
+        markup.add(item1, item2, item3, item4)  
         bot.send_message(message.chat.id, 'Жмакни на кнопку', reply_markup=markup)
-        bot.register_next_step_handler(message, weather_in_bishkek)
+        bot.register_next_step_handler(message, weather_in_city)
     elif message.text.lower() == 'знак зодиака':
         markup = telebot.types.ReplyKeyboardMarkup(row_width=4)
         item1 = telebot.types.KeyboardButton('Овен')
@@ -90,15 +84,27 @@ def answer(message):
 
     elif message.text.lower() == 'как дела?':
         some_list = ['Good', 'Bad', 'Awful', 'Great', 'Awesome', 'Пока не родила']
-        n = random.randint(0, len(some_list))
+        n = random.randint(0, len(some_list)-1)
         bot.send_message(message.chat.id, some_list[n])
     elif message.text.lower() == 'рандомное число':
         bot.send_message(message.chat.id, str(random.randint(1, 100)))
     elif message.text.lower() == 'кинуть кость':
-        bot.send_message(message.chat.id, str(random.randint(1, 7)))
+        bot.send_message(message.chat.id, str(random.randint(1, 6)))
     elif message.text.lower() == 'курсы валют':
-        bot.send_message(message.chat.id, 'Введите название валюты')
-        bot.register_next_step_handler(message, forex)
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Доллар США')
+        item2 = telebot.types.KeyboardButton('Евро')
+        item3 = telebot.types.KeyboardButton('Канадский доллар')
+        item4 = telebot.types.KeyboardButton('Киргизских сомов')
+        item5 = telebot.types.KeyboardButton('Казахстанских тенге')
+        item6 = telebot.types.KeyboardButton('Японских иен')
+        item7 = telebot.types.KeyboardButton('Китайский юань')
+        item8 = telebot.types.KeyboardButton('Белорусский рубль')
+        item9 = telebot.types.KeyboardButton('Грузинский лари')
+        item10 = telebot.types.KeyboardButton('Назад')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Выберете название валюты', reply_markup=markup)
+        bot.register_next_step_handler(message, forex_in_real)
     elif message.text.lower() == 'напоминалка':
         bot.send_message(message.chat.id, 'Введите название напоминания:')
         bot.register_next_step_handler(message, set_reminder_name)
@@ -139,10 +145,6 @@ def solve_meal_input(message):
         bot.register_next_step_handler(message, solve_meal_input)
 
 @bot.message_handler(content_types=['text'])
-def forex(message):
-    bot.send_message(message.chat.id, currency(message.text))
-
-@bot.message_handler(content_types=['text'])
 def set_reminder_name(message):
     user_data = {}
     user_data[message.chat.id] = {'reminder_name': message.text}
@@ -180,6 +182,76 @@ def think_of(message):
     else:
         bot.send_message(message.chat.id, 'yep!')
 
+@bot.message_handler(content_types=['text'])
+def forex_in_real(message):
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = telebot.types.KeyboardButton('Доллар США')
+    item2 = telebot.types.KeyboardButton('Евро')
+    item3 = telebot.types.KeyboardButton('Канадский доллар')
+    item4 = telebot.types.KeyboardButton('Киргизских сомов')
+    item5 = telebot.types.KeyboardButton('Казахстанских тенге')
+    item6 = telebot.types.KeyboardButton('Японских иен')
+    item7 = telebot.types.KeyboardButton('Китайский юань')
+    item8 = telebot.types.KeyboardButton('Белорусский рубль')
+    item9 = telebot.types.KeyboardButton('Грузинский лари')
+    item10 = telebot.types.KeyboardButton('Назад')
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+    if message.text != 'Назад':
+        bot.send_message(message.chat.id, currency(message.text), reply_markup=markup)
+        bot.register_next_step_handler(message, forex_in_real)
+    elif message.text == 'Назад':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Рандомное число')
+        item2 = telebot.types.KeyboardButton('Кинуть кость')
+        item3 = telebot.types.KeyboardButton('Как дела?')
+        item4 = telebot.types.KeyboardButton('Напоминалка')
+        item5 = telebot.types.KeyboardButton('Загадай число')
+        item6 = telebot.types.KeyboardButton('Знак зодиака')
+        item7 = telebot.types.KeyboardButton('Математические задачки')
+        item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+def weather_in_city(message):
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = telebot.types.KeyboardButton('00:00')
+    item2 = telebot.types.KeyboardButton('03:00')
+    item3 = telebot.types.KeyboardButton('06:00')
+    item4 = telebot.types.KeyboardButton('09:00')
+    item5 = telebot.types.KeyboardButton('12:00')
+    item6 = telebot.types.KeyboardButton('15:00')
+    item7 = telebot.types.KeyboardButton('18:00')
+    item8 = telebot.types.KeyboardButton('21:00')
+    item9 = telebot.types.KeyboardButton('24:00')
+    item10 = telebot.types.KeyboardButton('Назад')
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)  
+    if message.text == 'Бишкек':
+        bot.send_message(message.chat.id, 'Выбери время', reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_bishkek)
+    elif message.text == 'Сосновый Бор':
+        bot.send_message(message.chat.id, 'Выбери время', reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_sosnovy_bor)
+    elif message.text == 'Эдмонтон':
+        bot.send_message(message.chat.id, 'Выбери время', reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_edmonton)   
+    elif message.text == 'Назад':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Рандомное число')
+        item2 = telebot.types.KeyboardButton('Кинуть кость')
+        item3 = telebot.types.KeyboardButton('Как дела?')
+        item4 = telebot.types.KeyboardButton('Напоминалка')
+        item5 = telebot.types.KeyboardButton('Загадай число')
+        item6 = telebot.types.KeyboardButton('Знак зодиака')
+        item7 = telebot.types.KeyboardButton('Математические задачки')
+        item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def weather_in_bishkek(message):
@@ -209,7 +281,71 @@ def weather_in_bishkek(message):
         item7 = telebot.types.KeyboardButton('Математические задачки')
         item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
         item9 = telebot.types.KeyboardButton('Курсы валют')
-        item10 = telebot.types.KeyboardButton('Погода в Бишкеке')
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
+
+@bot.message_handler(content_types=['text'])
+def weather_in_sosnovy_bor(message):
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = telebot.types.KeyboardButton('00:00')
+    item2 = telebot.types.KeyboardButton('03:00')
+    item3 = telebot.types.KeyboardButton('06:00')
+    item4 = telebot.types.KeyboardButton('09:00')
+    item5 = telebot.types.KeyboardButton('12:00')
+    item6 = telebot.types.KeyboardButton('15:00')
+    item7 = telebot.types.KeyboardButton('18:00')
+    item8 = telebot.types.KeyboardButton('21:00')
+    item9 = telebot.types.KeyboardButton('24:00')
+    item10 = telebot.types.KeyboardButton('Назад')
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+    if message.text != 'Назад':
+        bot.send_message(message.chat.id, weather_sosnovy_bor(message.text), reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_sosnovy_bor)
+    elif message.text == 'Назад':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Рандомное число')
+        item2 = telebot.types.KeyboardButton('Кинуть кость')
+        item3 = telebot.types.KeyboardButton('Как дела?')
+        item4 = telebot.types.KeyboardButton('Напоминалка')
+        item5 = telebot.types.KeyboardButton('Загадай число')
+        item6 = telebot.types.KeyboardButton('Знак зодиака')
+        item7 = telebot.types.KeyboardButton('Математические задачки')
+        item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+        bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
+
+@bot.message_handler(content_types=['text'])
+def weather_in_edmonton(message):
+    markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = telebot.types.KeyboardButton('00:00')
+    item2 = telebot.types.KeyboardButton('03:00')
+    item3 = telebot.types.KeyboardButton('06:00')
+    item4 = telebot.types.KeyboardButton('09:00')
+    item5 = telebot.types.KeyboardButton('12:00')
+    item6 = telebot.types.KeyboardButton('15:00')
+    item7 = telebot.types.KeyboardButton('18:00')
+    item8 = telebot.types.KeyboardButton('21:00')
+    item9 = telebot.types.KeyboardButton('24:00')
+    item10 = telebot.types.KeyboardButton('Назад')
+    markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
+    if message.text != 'Назад':
+        bot.send_message(message.chat.id, weather_edmonton_canada(message.text), reply_markup=markup)
+        bot.register_next_step_handler(message, weather_in_edmonton)
+    elif message.text == 'Назад':
+        markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = telebot.types.KeyboardButton('Рандомное число')
+        item2 = telebot.types.KeyboardButton('Кинуть кость')
+        item3 = telebot.types.KeyboardButton('Как дела?')
+        item4 = telebot.types.KeyboardButton('Напоминалка')
+        item5 = telebot.types.KeyboardButton('Загадай число')
+        item6 = telebot.types.KeyboardButton('Знак зодиака')
+        item7 = telebot.types.KeyboardButton('Математические задачки')
+        item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
+        item9 = telebot.types.KeyboardButton('Курсы валют')
+        item10 = telebot.types.KeyboardButton('Погода')
         markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10)
         bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
@@ -244,7 +380,8 @@ def horoscope(message):
         item7 = telebot.types.KeyboardButton('Математические задачки')
         item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
         item9 = telebot.types.KeyboardButton('Курсы валют')
-        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9,item10)
         bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
 
@@ -274,7 +411,8 @@ def mathsolving(message):
         item7 = telebot.types.KeyboardButton('Математические задачки')
         item8 = telebot.types.KeyboardButton('Вычислить стоимость продукта')
         item9 = telebot.types.KeyboardButton('Курсы валют')
-        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9)
+        item10 = telebot.types.KeyboardButton('Погода')
+        markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9,item10)
         bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
     elif message.text != 'Вычеслить факториал' or 'Вычеслить число Фиббоначчи' or 'Назад':
         bot.send_message(message.chat.id, 'Сначала выберете на клавиатуре то, что хотите')
