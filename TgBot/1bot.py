@@ -13,7 +13,7 @@ from les4 import pars
 from forex1 import currency
 from weather import weather_bishkek, weather_edmonton_canada, weather_sosnovy_bor
 
-token = '6151520725:AAG8VIVfQdv6Fh6yDiYCqDvU-AMLXI8E_R0'
+token = ''
 
 bot = telebot.TeleBot(token)
 
