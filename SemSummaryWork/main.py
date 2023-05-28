@@ -8,7 +8,7 @@ notes = []
 # save notes in json file
 def save_notes():
     try:
-        with open("SemSummaryWork/notes.json", "w") as f:
+        with open("notes.json", "w") as f:
             json.dump(notes, f, indent=4)
     except FileNotFoundError:
         print("File doesn't found")
@@ -18,7 +18,7 @@ def save_notes():
 def load_notes():
     global notes
     try:
-        with open("SemSummaryWork/notes.json") as f:
+        with open("notes.json") as f:
             notes = json.load(f)
     except FileNotFoundError:
         pass
